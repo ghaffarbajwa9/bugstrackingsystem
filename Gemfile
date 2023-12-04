@@ -1,5 +1,16 @@
 source "https://rubygems.org"
 
+#managerial task
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+gem 'sass-rails'
+
+
 ruby "3.2.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
