@@ -1,0 +1,49 @@
+<%= form_with(model: bug) do |form| %>
+  <% if bug.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+
+      <ul>
+        <% bug.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :project_id, style: "display: block" %>
+    <%= form.text_field :project_id %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :deadline, style: "display: block" %>
+    <%= form.datetime_field :deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type, style: "display: block" %>
+    <%= form.select :type, options_for_select(['','Feature', 'Bug'], bug.type), id: 'type_select' %>
+
+  </div>
+
+  <div class="field"  id="status_field" style="display: none;">
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select :status, options_for_select([]), id: 'status_select' %>
+
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

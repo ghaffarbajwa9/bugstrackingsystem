@@ -1,5 +1,6 @@
 ActiveAdmin.setup do |config|
   # == Site Title
+  config.register_javascript 'active_admin_bug.js'
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.

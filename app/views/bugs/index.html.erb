@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bugs</h1>
+
+<div id="bugs">
+  <% @bugs.each do |bug| %>
+    <%= render bug %>
+    <p>
+      <%= link_to "Show this bug", bug %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bug", new_bug_path %>

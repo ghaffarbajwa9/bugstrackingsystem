@@ -22,7 +22,7 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
       f.input :password_confirmation
-      f.input :user_type, :as => :select, collection: (['admin', 'developer', 'qa'])
+      f.input :user_type, :as => :select, collection: (['manager', 'developer', 'qa'])
     end
     f.actions
   end

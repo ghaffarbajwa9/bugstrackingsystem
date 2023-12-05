@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :bugs
+  resources :projects
+  # root to: "admin/dashboard#index"
+  root "bugs#index"
+
+
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,5 +14,4 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
 end
